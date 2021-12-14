@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Viral Story - Viral News Magazine Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'blog/images/core-img/favicon.ico' %}">
+{#    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">#}
+
+    <style>
+        @import url("{% static 'blog/css/bootstrap.min.css' %}");
+        @import url("{% static 'blog/css/owl.carousel.min.css' %}");
+        @import url("{% static 'blog/css/animate.css' %}");
+        @import url("{% static 'blog/css/magnific-popup.css' %}");
+        @import url("{% static 'blog/css/font-awesome.min.css' %}");
+        @import url("{% static 'blog/css/classy-nav.min.css' %}");
+        @import url("{% static 'blog/css/nice-select.min.css' %}");
+        @font-face{
+            font-family:classyfonts;
+            src:url("{% static 'blog/fonts/classy.eot' %}");
+            src:url("{% static 'blog/fonts/classy.eot' %}") format("embedded-opentype"),
+            url("{% static 'blog/fonts/classy.ttf' %}") format("truetype"),
+            url("{% static 'blog/fonts/classy.woff' %}") format("woff"),
+            url("{% static 'blog/fonts/classy.svg' %}") format("svg");
+            url("{% static 'blog/fonts/classy.svg' %}") format("svg");
+            font-weight:400;
+            font-style:normal}
+    </style>
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+</head>
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="viral-news-main-menu" id="stickyMenu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="viralnewsNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="index.html"><img src="{% static 'blog/images/core-img/logo.png' %}" alt="Logo"></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active"><a href="category.html">Top 10</a></li>
+                                    <li><a href="#">Категории</a>
+                                        <ul class="dropdown">
+                                            {% for post in posts %}
+                                            <li><a href="index.html">{{ post.category.cat_name }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                <!-- Video Post Button -->
+                                <div class="add-post-button">
+                                    <a href="#" class="btn add-post-btn">Add Post</a>
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+
+    <!-- ##### Welcome Slide Area Start ##### -->
+    <div class="welcome-slide-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="welcome-slides owl-carousel">
+
+                        <!-- Single Welcome Slide -->
+                        <div class="single-welcome-slide">
+                            <div class="row no-gutters">
+                                <div class="col-12 col-lg-8">
+                                    <!-- Welcome Post -->
+                                    <div class="welcome-post">
+                                        <img src="{% static 'blog/images/bg1.jpg' %}" alt="">
+                                        <div class="post-content" data-animation="fadeInUp" data-duration="500ms">
+                                            <a href="#" class="tag">Travel</a>
+                                            <a href="#" class="post-title">10 Tips to travel in style for less</a>
+                                            <p>1 day ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4">
+                                    <div class="welcome-posts--">
+                                        <!-- Welcome Post -->
+                                        <div class="welcome-post style-2">
+                                            <img src="{% static 'blog/images/bg2.jpg' %}" alt="">
+                                            <div class="post-content" data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">
+                                                <a href="#" class="tag tag-2">Celebs</a>
+                                                <a href="#" class="post-title">Superstar spoted with new boyfriend</a>
+                                                <p>1 day ago</p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Welcome Post -->
+                                        <div class="welcome-post style-2">
+                                            <img src="{% static 'blog/images/bg3.jpg' %}" alt="">
+                                            <div class="post-content" data-animation="fadeInUp" data-delay="750ms" data-duration="500ms">
+                                                <a href="#" class="tag tag-3">4 Fun</a>
+                                                <a href="#" class="post-title">Festival looks for all the party people</a>
+                                                <p>1 day ago</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Welcome Slide Area End ##### -->
+
+    <!-- ##### Blog Post Area Start ##### -->
+    <div class="viral-story-blog-post section-padding-0-50">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Posts Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="row">
+
+
+                        {% for post in posts %}
+                        <!-- Single Blog Post -->
+                        <div class="col-12 col-lg-6">
+                            <div class="single-blog-post style-3">
+                                <!-- Post Thumb -->
+                                <a href="#">
+                                <div class="post-thumb" style="height: 200px; width: 350px; background: url({{ post.photo.url }}), no-repeat; background-size: cover;"></div>
+                                </a>
+
+                                <!-- Post Data -->
+                                <div class="post-data">
+                                    <a href="#" class="post-category cat-{{ post.category.id }}">{{ post.category.cat_name }}</a>
+                                    <a href="#" class="post-title">
+                                        <h6>{{ post.title }}</h6>
+                                    </a>
+                                    <div class="post-meta">
+                                        <p class="post-author">By <a href="#">Michael Smithson</a></p>
+                                        <p class="post-date">{{ post.get_time }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="viral-news-pagination">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">01</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">02</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">03</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">04</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">05</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">15</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="sidebar-area">
+
+                        <!-- Latest Comments -->
+                        <div class="latest-comments-widget">
+                            <h4>Latest Comments</h4>
+
+                            <!-- Single Comment Widget -->
+                            <div class="single-comments d-flex">
+                                <div class="comments-thumbnail">
+                                    <img src="img/bg-img/t1.jpg" alt="">
+                                </div>
+                                <div class="comments-text">
+                                    <a href="#"><span>Jamie Smith</span> on Facebook is offering facial recognition...</a>
+                                    <p>06:34 am, April 14, 2018</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Comment Widget -->
+                            <div class="single-comments d-flex">
+                                <div class="comments-thumbnail">
+                                    <img src="img/bg-img/t2.jpg" alt="">
+                                </div>
+                                <div class="comments-text">
+                                    <a href="#"><span>Tania Heffner</span> on Facebook is offering facial recognition...</a>
+                                    <p>06:34 am, April 14, 2018</p>
+                                </div>
+                            </div>
+
+                            <!-- Single Comment Widget -->
+                            <div class="single-comments d-flex">
+                                <div class="comments-thumbnail">
+                                    <img src="img/bg-img/t3.jpg" alt="">
+                                </div>
+                                <div class="comments-text">
+                                    <a href="#"><span>Sandy Doe</span> on Facebook is offering facial recognition...</a>
+                                    <p>06:34 am, April 14, 2018</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Blog Post Area End ##### -->
+
+
+    <!-- ##### All Javascript Files ##### -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="{% static 'blog/js/popper.min.js' %}"></script>
+    <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'blog/js/plugins.js' %}"></script>
+    <script src="{% static 'blog/js/active.js' %}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% load static %} {% load women_tags %}
+{% block mainmenu %}
+{% for m in menu %}
+{{m.title}}
+{% endfor %}
+Регистрация | Войти
+{% endblock mainmenu %}
+{% if cat_selected == 0 %}
+Все категории
+{% else %}
+Все категории
+{% endif %} {% for c in cats %} {% if c.women__count > 0 %} {% if c.pk == cat_selected %}
+{{c.name}}
+{% else %}
+{{c.name}}
+{% endif %} {% endif %} {% endfor %}
+Наш канал
+
+{% block breadcrumbs %} {% endblock %}
+{% block content %} {% endblock %} {% if page_obj.has_other_pages %}
+{% if page_obj.has_previous %}
+<
+{% endif %} {% for p in paginator.page_range %} {% if page_obj.number == p %}
+{{ p }}
+{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+{{ p }}
+{% endif %} {% endfor %} {% if page_obj.has_next %}
+>
+{% endif %}
+{% endif %}
